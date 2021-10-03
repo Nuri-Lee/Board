@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+<resultMap type="board.vo.BoardVO" id="board">
+ <result property="no"   column="no" jdbcType="INTEGER"/>
+ <result property="title"   column="title" jdbcType="VARCHAR"/>
+ <result property="writer"   column="writer" jdbcType="VARCHAR"/>
+ <result property="password"   column="password" jdbcType="INTEGER"/>
+ <result property="content"   column="content" jdbcType="VARCHAR"/>
+ <result property="writeDate"   column="write_date" jdbcType="DATE"/>
+ </resultMap>
+   <insert id="insert">
+   		INSERT INTO BOARD(
+   			no
+   			,title
+   			,writer
+   			,password
+   			,content
+   		)
+   		VALUES (
+   			NO_SEQ.NEXTVAL
+   			,${title}
+   			,${writer}
+   			,${password}
+   			,${content}
+   		)
+   </insert>
+</mapper>
